@@ -1,7 +1,7 @@
 package edu.neumont.csc150.models.items.equipment;
 
 import edu.neumont.csc150.models.items.Item;
-
+//TODO: Comparable used here
 public abstract class Equipment extends Item implements Comparable {
     private int statBonus;
     private String statType;

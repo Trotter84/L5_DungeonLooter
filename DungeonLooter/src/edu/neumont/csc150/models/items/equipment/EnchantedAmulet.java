@@ -14,6 +14,7 @@ public class EnchantedAmulet extends Equipment {
         setEffect(StatusEffect.REGEN);
     }
 
+//	TODO: in EnchantedAmulet, call getEnchantment() and getEffect()
     public String getEnchantment() {
         return enchantment;
     }

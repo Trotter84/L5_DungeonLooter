@@ -14,6 +14,7 @@ public class Player {
     private int baseAttack;
     private int baseDefense;
 
+//	TODO: equippedWeapon type
     private Item equippedWeapon;
     private Equipment[] equippedGear;
     private Inventory inventory;
@@ -136,6 +137,7 @@ public class Player {
         return bonus;
     }
 
+//	TODO: equipWeapon() param
     public void equipWeapon(Item weapon) {
         if (equippedWeapon != null) {
             inventory.addItem(equippedWeapon);

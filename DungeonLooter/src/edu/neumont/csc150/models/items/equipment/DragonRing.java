@@ -14,6 +14,7 @@ public class DragonRing extends Equipment {
         setEffect(StatusEffect.STRENGTH);
     }
 
+//	TODO: in DragonRing, call getEnchantment() and getEffect()
     public String getEnchantment() {
         return enchantment;
     }

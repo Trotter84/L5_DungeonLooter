@@ -10,6 +10,7 @@ public class FireStaff extends Weapon {
         setEffect(StatusEffect.BURN);
     }
 
+//	TODO: in FireStaff, call getEffect()
     public StatusEffect getEffect() {
         return effect;
     }

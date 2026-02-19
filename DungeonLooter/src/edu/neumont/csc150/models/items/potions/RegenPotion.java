@@ -10,6 +10,7 @@ public class RegenPotion extends Potion {
         setEffect(StatusEffect.REGEN);
     }
 
+//	TODO: in RegenPotion, call getEffect()
     public StatusEffect getEffect() {
         return effect;
     }

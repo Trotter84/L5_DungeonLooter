@@ -41,10 +41,12 @@ public class Inventory {
         return new ArrayList<>(items);
     }
 
+//	TODO: getWeapon() return
     public List<Item> getWeapons() {
         return getAllItems();
     }
 
+//	TODO: getEquipment() return
     public List<Item> getEquipment() {
         return getAllItems();
     }
@@ -52,4 +54,7 @@ public class Inventory {
     public List<Item> getConsumables() {
         return getAllItems();
     }
+
+
+//	TODO: getPotion() missing
 }

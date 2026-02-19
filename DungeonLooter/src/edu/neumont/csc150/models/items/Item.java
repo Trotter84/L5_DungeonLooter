@@ -1,5 +1,7 @@
 package edu.neumont.csc150.models.items;
 
+import java.util.function.ToDoubleBiFunction;
+//TODO: note the Comparable implement
 public abstract class Item implements Comparable {
     private String name;
     private String description;
@@ -35,6 +37,7 @@ public abstract class Item implements Comparable {
         this.value = value;
     }
 
+//	TODO: Check back later
     @Override
     public int compareTo(Object other) {
         Item otherItem = (Item) other;

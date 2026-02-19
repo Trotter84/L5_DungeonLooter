@@ -9,7 +9,8 @@ public class PoisonDagger extends Weapon {
         super("Poison Dagger", "A dagger dripping with venom", 20, 10);
         setEffect(StatusEffect.POISON);
     }
-
+	
+//	TODO: in PoisonDagger, call getEffect()
     public StatusEffect getEffect() {
         return effect;
     }

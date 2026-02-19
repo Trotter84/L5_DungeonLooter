@@ -10,6 +10,7 @@ public class StrengthPotion extends Potion {
         setEffect(StatusEffect.STRENGTH);
     }
 
+//	TODO: in StrengthPotion, call getEffect()
     public StatusEffect getEffect() {
         return effect;
     }
