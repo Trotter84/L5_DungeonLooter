@@ -1,8 +1,8 @@
 package edu.neumont.csc150.models;
 
+import edu.neumont.csc150.models.interfaces.Attackable;
 import edu.neumont.csc150.models.items.equipment.Equipment;
 import edu.neumont.csc150.models.items.Item;
-import edu.neumont.csc150.models.items.weapons.Weapon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,7 +121,7 @@ public class Player {
     public int getAttackPower() {
         int total = baseAttack;
         if (equippedWeapon != null) {
-            total += ((Weapon) equippedWeapon).attack();
+            total += ((Attackable) equippedWeapon).attack();
         }
         total += getEquipmentBonus("attack");
         return total;
@@ -137,12 +137,11 @@ public class Player {
         return bonus;
     }
 
-//	TODO: equipWeapon() param
-    public void equipWeapon(Item weapon) {
+    public void equipWeapon(Attackable weapon) {
         if (equippedWeapon != null) {
             inventory.addItem(equippedWeapon);
         }
-        this.equippedWeapon = weapon;
+        this.equippedWeapon = (Item) weapon;
     }
 
     public void equipGear(Equipment gear, int slot) {
