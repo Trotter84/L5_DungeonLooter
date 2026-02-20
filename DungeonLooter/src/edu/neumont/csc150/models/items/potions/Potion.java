@@ -1,8 +1,9 @@
 package edu.neumont.csc150.models.items.potions;
 
+import edu.neumont.csc150.models.interfaces.Consumable;
 import edu.neumont.csc150.models.items.Item;
 
-public abstract class Potion extends Item {
+public abstract class Potion extends Item implements Consumable {
     private int potency;
     private boolean consumed;
 
@@ -12,10 +13,12 @@ public abstract class Potion extends Item {
         setConsumed(false);
     }
 
+	@Override
     public void consume() {
         setConsumed(true);
     }
 
+	@Override
     public boolean isConsumed() {
         return consumed;
     }

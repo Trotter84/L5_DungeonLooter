@@ -1,8 +1,10 @@
 package edu.neumont.csc150.models.items.potions;
 
+import edu.neumont.csc150.models.Player;
 import edu.neumont.csc150.models.StatusEffect;
+import edu.neumont.csc150.models.interfaces.StatusApplicable;
 
-public class StrengthPotion extends Potion {
+public class StrengthPotion extends Potion implements StatusApplicable {
     private StatusEffect effect;
 
     public StrengthPotion() {
@@ -15,7 +17,17 @@ public class StrengthPotion extends Potion {
         return effect;
     }
 
-    public void setEffect(StatusEffect effect) {
+	@Override
+	public void applyEffect(Player target) {
+		target.addEffect(getEffect());
+	}
+
+	@Override
+	public void removeEffect(Player target) {
+		target.removeEffect(getEffect());
+	}
+
+	public void setEffect(StatusEffect effect) {
         this.effect = effect;
     }
 }

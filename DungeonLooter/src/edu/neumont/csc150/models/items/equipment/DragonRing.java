@@ -1,8 +1,10 @@
 package edu.neumont.csc150.models.items.equipment;
 
+import edu.neumont.csc150.models.Player;
 import edu.neumont.csc150.models.StatusEffect;
+import edu.neumont.csc150.models.interfaces.Enchantable;
 
-public class DragonRing extends Equipment {
+public class DragonRing extends Equipment implements Enchantable {
     private String enchantment;
     private int enchantmentBonus;
     private StatusEffect effect;
@@ -35,7 +37,17 @@ public class DragonRing extends Equipment {
         return effect;
     }
 
-    public void setEffect(StatusEffect effect) {
+	@Override
+	public void applyEffect(Player target) {
+		target.addEffect(getEffect());
+	}
+
+	@Override
+	public void removeEffect(Player target) {
+		target.removeEffect(getEffect());
+	}
+
+	public void setEffect(StatusEffect effect) {
         this.effect = effect;
     }
 }

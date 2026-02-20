@@ -1,8 +1,10 @@
 package edu.neumont.csc150.models.items.weapons;
 
+import edu.neumont.csc150.models.Player;
 import edu.neumont.csc150.models.StatusEffect;
+import edu.neumont.csc150.models.interfaces.StatusApplicable;
 
-public class FireStaff extends Weapon {
+public class FireStaff extends Weapon implements StatusApplicable {
     private StatusEffect effect;
 
     public FireStaff() {
@@ -15,7 +17,17 @@ public class FireStaff extends Weapon {
         return effect;
     }
 
-    public void setEffect(StatusEffect effect) {
+	@Override
+	public void applyEffect(Player target) {
+		target.addEffect(getEffect());
+	}
+
+	@Override
+	public void removeEffect(Player target) {
+		target.removeEffect(getEffect());
+	}
+
+	public void setEffect(StatusEffect effect) {
         this.effect = effect;
     }
 }

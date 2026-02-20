@@ -1,8 +1,9 @@
 package edu.neumont.csc150.models.items.weapons;
 
+import edu.neumont.csc150.models.interfaces.Attackable;
 import edu.neumont.csc150.models.items.Item;
 
-public abstract class Weapon extends Item {
+public abstract class Weapon extends Item implements Attackable {
     private int damage;
 
     public Weapon(String name, String description, int value, int damage) {
