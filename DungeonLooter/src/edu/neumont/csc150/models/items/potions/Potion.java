@@ -2,41 +2,49 @@ package edu.neumont.csc150.models.items.potions;
 
 import edu.neumont.csc150.models.interfaces.Consumable;
 import edu.neumont.csc150.models.items.Item;
+import edu.neumont.csc150.models.items.weapons.Weapon;
+
 
 public abstract class Potion extends Item implements Consumable {
-    private int potency;
-    private boolean consumed;
+	private int potency;
+	private boolean consumed;
 
-    public Potion(String name, String description, int value, int potency) {
-        super(name, description, value);
-        setPotency(potency);
-        setConsumed(false);
-    }
-
-	@Override
-    public void consume() {
-        setConsumed(true);
-    }
+	public Potion(String name, String description, int value, int potency) {
+		super(name, description, value);
+		setPotency(potency);
+		setConsumed(false);
+	}
 
 	@Override
-    public boolean isConsumed() {
-        return consumed;
-    }
+	public void consume() {
+		setConsumed(true);
+	}
 
-    public void setConsumed(boolean consumed) {
-        this.consumed = consumed;
-    }
+	@Override
+	public boolean isConsumed() {
+		return consumed;
+	}
 
-    public int getPotency() {
-        return potency;
-    }
+	public void setConsumed(boolean consumed) {
+		this.consumed = consumed;
+	}
 
-    public void setPotency(int potency) {
-        this.potency = potency;
-    }
+	public int getPotency() {
+		return potency;
+	}
 
-    @Override
-    public String toString() {
-        return super.toString() + " | Potency: " + potency;
-    }
+	public void setPotency(int potency) {
+		this.potency = potency;
+	}
+
+	@Override
+	public int compareTo(Object other) {
+		Potion otherItem = (Potion)other;
+		return Integer.compare(otherItem.getPotency(), this.getPotency());
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " | Potency: " + potency;
+	}
 }

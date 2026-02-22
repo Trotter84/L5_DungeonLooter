@@ -4,18 +4,18 @@ import edu.neumont.csc150.models.Player;
 import edu.neumont.csc150.models.StatusEffect;
 import edu.neumont.csc150.models.interfaces.StatusApplicable;
 
+
 public class RegenPotion extends Potion implements StatusApplicable {
-    private StatusEffect effect;
+	private StatusEffect effect;
 
-    public RegenPotion() {
-        super("Regen Potion", "A glowing green elixir that heals over time", 15, 10);
-        setEffect(StatusEffect.REGEN);
-    }
+	public RegenPotion() {
+		super("Regen Potion", "A glowing green elixir that heals over time", 15, 10);
+		setEffect(StatusEffect.REGEN);
+	}
 
-//	TODO: in RegenPotion, call getEffect()
-    public StatusEffect getEffect() {
-        return effect;
-    }
+	public StatusEffect getEffect() {
+		return effect;
+	}
 
 	@Override
 	public void applyEffect(Player target) {
@@ -28,6 +28,6 @@ public class RegenPotion extends Potion implements StatusApplicable {
 	}
 
 	public void setEffect(StatusEffect effect) {
-        this.effect = effect;
-    }
+		this.effect = effect;
+	}
 }
