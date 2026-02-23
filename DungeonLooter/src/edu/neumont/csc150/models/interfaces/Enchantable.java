@@ -9,4 +9,5 @@ public interface Enchantable extends StatusApplicable {
 	String getEnchantment();
 
 	int getEnchantmentBonus();
+	
 }

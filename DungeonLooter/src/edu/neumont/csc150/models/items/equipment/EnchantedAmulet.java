@@ -4,38 +4,38 @@ import edu.neumont.csc150.models.Player;
 import edu.neumont.csc150.models.StatusEffect;
 import edu.neumont.csc150.models.interfaces.Enchantable;
 
+
 public class EnchantedAmulet extends Equipment implements Enchantable {
-    private String enchantment;
-    private int enchantmentBonus;
-    private StatusEffect effect;
+	private String enchantment;
+	private int enchantmentBonus;
+	private StatusEffect effect;
 
-    public EnchantedAmulet() {
-        super("Enchanted Amulet", "Glows with mystical energy", 50, 8, "health");
-        setEnchantment("Vitality");
-        setEnchantmentBonus(15);
-        setEffect(StatusEffect.REGEN);
-    }
+	public EnchantedAmulet() {
+		super("Enchanted Amulet", "Glows with mystical energy", 50, 8, "health");
+		setEnchantment("Vitality");
+		setEnchantmentBonus(15);
+		setEffect(StatusEffect.REGEN);
+	}
 
-//	TODO: in EnchantedAmulet, call getEnchantment() and getEffect()
-    public String getEnchantment() {
-        return enchantment;
-    }
+	public String getEnchantment() {
+		return enchantment;
+	}
 
-    public void setEnchantment(String enchantment) {
-        this.enchantment = enchantment;
-    }
+	public void setEnchantment(String enchantment) {
+		this.enchantment = enchantment;
+	}
 
-    public int getEnchantmentBonus() {
-        return enchantmentBonus;
-    }
+	public int getEnchantmentBonus() {
+		return enchantmentBonus;
+	}
 
-    public void setEnchantmentBonus(int enchantmentBonus) {
-        this.enchantmentBonus = enchantmentBonus;
-    }
+	public void setEnchantmentBonus(int enchantmentBonus) {
+		this.enchantmentBonus = enchantmentBonus;
+	}
 
-    public StatusEffect getEffect() {
-        return effect;
-    }
+	public StatusEffect getEffect() {
+		return effect;
+	}
 
 	@Override
 	public void applyEffect(Player target) {
@@ -48,6 +48,6 @@ public class EnchantedAmulet extends Equipment implements Enchantable {
 	}
 
 	public void setEffect(StatusEffect effect) {
-        this.effect = effect;
-    }
+		this.effect = effect;
+	}
 }
